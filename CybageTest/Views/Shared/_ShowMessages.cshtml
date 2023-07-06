@@ -1,0 +1,19 @@
+﻿
+@if ((string)TempData["ErrMsg"] != null && (string)TempData["ErrMsg"] != "")
+{
+    <script type="text/javascript">
+        $(function () {
+            toastr.error('@Html.Raw((string)TempData["ErrMsg"])');
+            TempData["ErrMsg"] = null;
+        });
+    </script>
+}
+@if ((string)TempData["SuccMsg"] != null && (string)TempData["SuccMsg"] != "")
+{
+    <script type="text/javascript">
+        $(function () {
+            toastr.success('@Html.Raw((string)TempData["SuccMsg"])');
+            TempData["SuccMsg"] = null;
+        });
+    </script>
+}
